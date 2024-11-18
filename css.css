@@ -1,0 +1,164 @@
+*{
+   margin-top: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-image: url('img_fundo.jpg'); /* Insira o caminho da sua imagem */
+   background-size: cover; /* Define o tamanho da imagem para ocupar 50% da altura e 100% da largura */
+   background-repeat: repeat-y; /* Faz a imagem se repetir verticalmente */
+   background-position: center; /* Centraliza a imagem no topo da página */
+   min-height: 100vh; /* Mantém a altura da página */
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+}
+
+.container{
+    width: 370px;
+    background: transparent;
+    border: 2px solid #9dbac9;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 30px 30px;
+}
+
+.input-container{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0 ;
+}
+
+.input-container input{
+   width: 100%;
+   height: 100%;
+   background:transparent;
+   border: none;
+   outline: none;
+   border: 2px solid #9dbac9;
+   border-radius: 10px;
+   font-size: 16px;
+   color: #9dbac9;
+   padding: 20px 45px 20px 20px; /* CIMA DIREITA BAIXO ESQUERDA*/
+}
+
+input::placeholder {
+    color: #999; 
+}
+
+.input-container img{
+    position: absolute;
+    right: 24px;
+    margin-top: 15px;
+}
+
+.button{
+   width: 40%;
+   height: 50px; 
+   background-color: #9dbac9;
+   border: none;
+   border-radius: 10px;
+   color: #000;
+   font-weight: 600;
+   margin-top: 20px;
+   margin-left: 90px;
+   cursor: pointer;
+   outline: none;
+   font-size: 16;
+   margin-bottom: 10px;
+}
+
+.button:hover{
+    background-color: #5d8294;
+}
+
+.sobre p a{
+    font-size: 16px;
+    color: #9dbac9;
+    margin-left: 130px;
+    text-decoration: none;
+
+}
+
+.btn_adicionar{
+   width: 100%;
+   height: 60px; 
+   background-color: #9dbac9;
+   border: none;
+   border-radius: 10px;
+   color: #000;
+   font-weight: 700;
+   margin-top: 20px;
+   cursor: pointer;
+   outline: none;
+   font-size: 22px;
+   margin-bottom: 10px;
+}
+
+.btn_buscar02{
+    width: 100%;
+    height: 60px; 
+    background-color: #9dbac9;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+    font-size: 22px;
+    margin-bottom: 10px;
+ }
+
+.btn_buscar{
+    width: 40%;
+    height: 50px; 
+    background-color: #9dbac9;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    margin-top: -70px;
+    margin-left: 300px;
+    cursor: pointer;
+    outline: none;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.container_buscar{
+    margin-top: -20%;
+}
+
+.input_buscar input{
+   width: 100%;
+   height: 100%;
+   background:transparent;
+   border: none;
+   outline: none;
+   border: 2px solid #9dbac9;
+   border-radius: 10px;
+   font-size: 16px;
+   color: #9dbac9;
+   padding: 20px 45px 20px 20px; /* CIMA DIREITA BAIXO ESQUERDA*/
+  
+   margin-top: 33px;
+}
+
+.input_buscar{
+    position: relative;
+    width: 58%;
+    height: 50px;
+ 
+}
+
+table{
+    backdrop-filter: blur(20px);
+    border: 0.1px solid #9dbac9;
+    border-radius: 3px;
+    text-align: left;
+    color: #9dbac9;
+
+}

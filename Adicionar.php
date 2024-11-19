@@ -32,31 +32,52 @@
             <div>
                 <button type="submit" class="button">Adicionar</button>
             </div>
+            <div id="mensagem" class="w3-center w3-padding"></div>
          </form>
 
     </div>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "usbw";
-    $dbname = "clientes_db";      
+$servername = "localhost";
+$username = "root";
+$password = "usbw";
+$dbname = "clientes_db";      
 
-    $conexao = new mysqli($servername, $username, $password, $dbname);
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nome']) && isset($_POST['cpf'])) {
-        $senha = $_POST['senha'];
-        $cpf = $_POST['cpf'];
+$conexao = new mysqli($servername, $username, $password, $dbname);
 
-        $sql = "SELECT * FROM cliente WHERE cpf = '$cpf' OR senha = '$senha'";
-        
-        if ($conexao->query($sql) === TRUE) {
-            echo "<p class='w3-text-white w3-center'></p>";
-        } else {
-            echo "<p class='w3-text-white w3-center'>Erro ao salvar: " . $conexao->error . "</p>";
-        }
+
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nome']) && isset($_POST['cpf'])) {
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+
+    // Query para inserir cliente no banco de dados
+    $sql = "INSERT INTO cliente (nome, cpf) VALUES ('$nome', '$cpf')";
+
+    if ($conexao->query($sql) === TRUE) {
+        echo "<script>
+                document.getElementById('mensagem').innerHTML = 
+                '<p class=\"w3-text-white\">Cliente adicionado com sucesso!</p>';
+              </script>";
+    } else {
+        echo "<script>
+                document.getElementById('mensagem').innerHTML = 
+                '<p class=\"w3-text-white\">Erro ao adicionar cliente: " . $conexao->error . "</p>';
+              </script>";
     }
-    ?>
+}
+
+
+
+
+$conexao->close();
+?>
+
+
     
     
 </body>
